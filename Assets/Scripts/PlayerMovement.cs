@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] float speed = 25;
+    [SerializeField] FloatVariable playerMoveSpeed;
     
     Rigidbody2D rb;
     Animator animator;
@@ -51,6 +51,6 @@ public class PlayerMovement : MonoBehaviour
 
     void MovePlayer()
     {
-        rb.MovePosition(transform.position + change * speed * Time.fixedDeltaTime);
+        rb.MovePosition(transform.position + change * playerMoveSpeed.Value * Time.fixedDeltaTime);
     }
 }

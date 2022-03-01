@@ -70,8 +70,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fabbe7692b53024cb7c13d7421166f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newXMin: 31
-  newXMax: 47
-  newYMin: -12
-  newYMax: 7
+  cameraMaxPosition: {fileID: 11400000, guid: 788cd9b3f53c9cb48bb4a2737e7661e9, type: 2}
+  cameraMinPosition: {fileID: 11400000, guid: 21b4777796f2e89488c920029c9a321f, type: 2}
+  newCameraMax: {x: 47, y: 7}
+  newCameraMin: {x: 31, y: -12}
+  cameraSmoothing: {fileID: 11400000, guid: 5035aa5bd60a5d841bcc2ebed1c9a474, type: 2}
   playerChange: {x: 2, y: 0, z: 0}
+  needText: 1
+  placeName: Lake Hollow
+  placeNameVariable: {fileID: 11400000, guid: f40f5642148c53a42b1fd15ad2122909, type: 2}
+  onScreenTransition: {fileID: 11400000, guid: db58ad19ec17f944fb2a41cc1933d13a, type: 2}
