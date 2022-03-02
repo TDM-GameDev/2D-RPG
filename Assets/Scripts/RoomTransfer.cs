@@ -41,7 +41,7 @@ public class RoomTransfer : MonoBehaviour
         cameraMinPosition.Value.x = newCameraMin.x;
         cameraMaxPosition.Value.x = newCameraMax.x;
         cameraMinPosition.Value.y = newCameraMin.y;
-        cameraMaxPosition.Value.y = newCameraMax.x;
+        cameraMaxPosition.Value.y = newCameraMax.y;
 
         other.transform.position += playerChange;
         //yield return new WaitForSeconds(.1f);

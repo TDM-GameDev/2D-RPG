@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 228454962}
   - component: {fileID: 228454966}
   - component: {fileID: 228454967}
+  - component: {fileID: 1603186219}
   m_Layer: 0
   m_Name: SignInGrass
   m_TagString: Untagged
@@ -179,6 +180,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &228454966
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -239,3 +252,31 @@ MonoBehaviour:
   signText: {fileID: 11400000, guid: 2fe3600c03c6b5048b47ef62092a8e10, type: 2}
   placeName: Lake Hollow
   inRange: 0
+--- !u!114 &1603186219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3851191192068154514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8dfc68d283476ef4bb6cc96d80ff82b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 92e8022ff6b1ab8489eefb8c2681181d, type: 2}
+  unityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 228454967}
+        m_TargetAssemblyTypeName: RoadSign, Assembly-CSharp
+        m_MethodName: Interaction
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

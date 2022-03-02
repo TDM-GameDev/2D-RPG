@@ -6,7 +6,6 @@ public class RoadSign : MonoBehaviour
 {
     [SerializeField] RPG.Events.VoidEvent onSignApproach;
     [SerializeField] RPG.Events.VoidEvent onSignDepart;
-    [SerializeField] TMPro.TextMeshProUGUI readSignText;
     [SerializeField] GameObject signPost;
     [SerializeField] TMPro.TextMeshProUGUI signPostText;
     [SerializeField] StringVariable signText;
@@ -35,19 +34,30 @@ public class RoadSign : MonoBehaviour
     }
 
     private void Update() {
-        if (inRange) {
-            if (Input.GetKey(KeyCode.E)) {
-                signPost.SetActive(true);
-                readSignText.gameObject.SetActive(false);
-            }
-            else {
-                signPost.SetActive(false);
-                readSignText.gameObject.SetActive(true);
-            }
-        }
+        //if (inRange) {
+        //    if (Input.GetKey(KeyCode.E)) {
+        //        signPost.SetActive(true);
+        //        readSignText.gameObject.SetActive(false);
+        //    }
+        //    else {
+        //        signPost.SetActive(false);
+        //        readSignText.gameObject.SetActive(true);
+        //    }
+        //}
     }
 
     public void SetInRange(bool inRange) {
         this.inRange = inRange;
+    }
+
+    public void Interaction() {
+        if (inRange) {
+            if (!signPost.activeInHierarchy) {
+                signPost.SetActive(true);
+            }
+            else {
+                signPost.SetActive(false);
+            }
+        }
     }
 }
