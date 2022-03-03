@@ -1,5 +1,67 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &368152905
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 368152906}
+  - component: {fileID: 368152907}
+  m_Layer: 0
+  m_Name: SwordCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &368152906
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 368152905}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2358041796489890147}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!60 &368152907
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 368152905}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.28069496, y: -0.19139516}
+      - {x: -0.08954334, y: -0.3630495}
+      - {x: -0.6426297, y: -0.25809142}
+      - {x: -0.5877852, y: -0.80901706}
+      - {x: 0.40869868, y: -1.0279008}
+      - {x: 0.41379452, y: -0.54661995}
 --- !u!1 &2358041796489890150
 GameObject:
   m_ObjectHideFlags: 0
@@ -32,7 +94,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 10.499999, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 368152906}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -146,10 +209,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e0e473b7b1516b488fe4b547825d0f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  swordCollider: {fileID: 368152905}
   playerMoveSpeed: {fileID: 11400000, guid: b89dc34c447963e45be09746bc5f049e, type: 2}
   onInteract: {fileID: 11400000, guid: 92e8022ff6b1ab8489eefb8c2681181d, type: 2}
+  controller: {fileID: 9100000, guid: fb9000b01b7a1e041a590f0e5c48f1db, type: 2}
   playerInput: {fileID: 1183068641127678104}
-  movementSmoothingSpeed: 1
 --- !u!95 &2358041796489890156
 Animator:
   serializedVersion: 3
@@ -238,6 +302,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 05a851d9-081d-4db7-955a-367dc3c43ade
     m_ActionName: PlayerControls/Movement[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2358041796489890151}
+        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+        m_MethodName: OnAttack
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 9509c0f5-4915-40a6-a82d-a0ff25b14ff5
+    m_ActionName: PlayerControls/Attack[/Mouse/leftButton,/XInputControllerWindows/rightTrigger]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Gamepad
   m_DefaultActionMap: PlayerControls
