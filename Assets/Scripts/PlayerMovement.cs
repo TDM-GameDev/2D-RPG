@@ -7,8 +7,8 @@ using UnityEditor.Animations;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private const string attack = "attack";
-    private const string moving = "moving";
+    private const string attackString = "attack";
+    private const string movingString = "moving";
     private const string AttackingStateName = "Attacking";
     private const string WalkingStateName = "Walking";
     private const string IdleStateName = "Idle";
@@ -27,10 +27,12 @@ public class PlayerMovement : MonoBehaviour
 
     Rigidbody2D rb;
     Animator animator;
+    Attack attack;
+    
     Vector3 change;
 
-    private enum Directions { Left, Right, Up, Down };
-    private Directions facing = Directions.Down;
+    //private enum Directions { Left, Right, Up, Down };
+    //private Directions facing = Directions.Down;
 
     //Current Control Scheme
     private string currentControlScheme;
@@ -41,7 +43,8 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         currentControlScheme = playerInput.currentControlScheme;
-        Debug.Log(currentControlScheme);
+        attack = GetComponent<Attack>();
+        //Debug.Log(currentControlScheme);
     }
 
     void Update()
@@ -57,13 +60,12 @@ public class PlayerMovement : MonoBehaviour
         {
             animator.SetFloat("moveX", rawInputMovement.x);
             animator.SetFloat("moveY", rawInputMovement.y);
-            animator.SetBool(moving, true);
-            Debug.Log(animator.runtimeAnimatorController.animationClips);
+            animator.SetBool(movingString, true);
             MovePlayer();
         }
         else
         {
-            animator.SetBool(moving, false);
+            animator.SetBool(movingString, false);
         }
     }
 
@@ -74,12 +76,13 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnMovement(InputAction.CallbackContext value) {
         Vector2 inputMovement = value.ReadValue<Vector2>();
-        rawInputMovement = new Vector3(inputMovement.x, inputMovement.y, 0);
+        rawInputMovement = new Vector3(inputMovement.x, inputMovement.y, 0).normalized;
     }
 
     public void OnAttack(InputAction.CallbackContext value) {
         if (value.started) {
-            animator.SetTrigger(attack);
+            animator.SetTrigger(attackString);
+            attack.OnAttack();
         }
     }
 
