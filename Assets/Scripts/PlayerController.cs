@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.EventSystems;
 using UnityEditor.Animations;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     private const string attackString = "attack";
     private const string movingString = "moving";

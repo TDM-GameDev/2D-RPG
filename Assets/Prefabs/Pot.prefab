@@ -142,5 +142,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fa69b444f5151e4587c501b567009b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destroyWaitTime: 0.3
   hitPoints: 1
-  isItem: 1
+  healthType: 1
